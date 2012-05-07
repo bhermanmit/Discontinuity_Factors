@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmfd>
+
+<!-- Definition of Geometry -->
+  <geometry>
+    <nx>1</nx>
+    <ny>1</ny>
+    <nz>1</nz>
+    <ng>2</ng>
+    <mesh>
+         1
+    </mesh>
+    <xgrid>20</xgrid>
+    <ygrid>1</ygrid>
+    <zgrid>1</zgrid>
+    <dx>21.42</dx>
+    <dy>1</dy>
+    <dz>1</dz>
+    <bc> 1.0 1.0 1.0 1.0 1.0 1.0 </bc>
+  </geometry>
+
+<!-- Defition of Materials -->
+  <mat uid="1">
+    <totalxs>0.5516 1.2743</totalxs>
+    <scattxs>0.5246 0.0176 0.0014 1.2067</scattxs>
+    <nfissxs>0.0051 0.0 0.0823 0.0</nfissxs>
+    <diffcoef>4.7439 1.0899</diffcoef>
+  </mat>
+
+</cmfd>

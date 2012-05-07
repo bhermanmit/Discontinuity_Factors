@@ -1,0 +1,34 @@
+% Bryan Herman
+% Simple 1-D Diffusion Code
+
+%% Geometry Setup
+geom.map = [1 2];
+geom.dx = [20 20];
+geom.mesh = [20 20];
+geom.totmesh = cumsum(geom.mesh);
+geom.albedo = [1,1];
+
+%% Material Setup
+
+% UO2 Assembly
+mat(1).totxs = [0];
+mat(1).scattxs = [0];
+mat(1).nfissxs = [0];
+mat(1).diff = [0];
+
+% MOX Assembly
+mat(2).totxs = [0];
+mat(2).scattxs = [0];
+mat(2).nfissxs = [0];
+mat(2).diff = [0];
+
+%% Run Problem
+
+% Create Loss Matrix
+M = setup_M(geom,mat);
+
+% Create Production Matrix
+F = setup_F(geom,mat);
+
+% Solve for eigenvalue/eigenvector
+[k,phi] = solve_problem(M,F);
